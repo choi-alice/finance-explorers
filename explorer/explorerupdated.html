@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance Explorers</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0f0e0c;
+    --surface: #1a1916;
+    --border: #2e2d2a;
+    --text: #f0ede6;
+    --text-muted: #7a7870;
+    --text-dim: #4a4845;
+    --accent: #f59e0b;
+    --green: #4ade80;
+    --blue: #93c5fd;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+
+  .container { max-width: 600px; width: 100%; }
+
+  header { margin-bottom: 56px; }
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 6vw, 60px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  header h1 em { font-style: italic; color: var(--accent); }
+  header p { font-size: 13px; color: var(--text-muted); letter-spacing: 0.05em; }
+
+  .tools { display: flex; flex-direction: column; gap: 16px; }
+
+  .tool-card {
+    display: block;
+    text-decoration: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    transition: border-color 0.15s, transform 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .tool-card::after {
+    content: '→';
+    position: absolute;
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--text-dim);
+    transition: right 0.15s, color 0.15s;
+  }
+  .tool-card:hover { border-color: #4a4845; transform: translateY(-1px); }
+  .tool-card:hover::after { right: 22px; color: var(--accent); }
+
+  .tool-tag {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+  .tool-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .tool-name em { font-style: italic; }
+  .tool-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; max-width: 380px; }
+
+  .tool-card.green .tool-name em { color: var(--green); }
+  .tool-card.blue .tool-name em { color: var(--blue); }
+
+  footer {
+    margin-top: 48px;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Finance <em>explorers</em></h1>
+    <p>// two tools for understanding your money</p>
+  </header>
+
+  <div class="tools">
+    <a class="tool-card green" href="explorer/compounding-explorer.html">
+      <div class="tool-tag">Tool 01</div>
+      <div class="tool-name">Compound <em>interest</em></div>
+      <div class="tool-desc">See how your money grows over time with initial deposits, annual contributions, and compound interest rates.</div>
+    </a>
+
+    <a class="tool-card blue" href="explorer/salary-explorer.html">
+      <div class="tool-tag">Tool 02</div>
+      <div class="tool-name">Ontario <em>take-home</em></div>
+      <div class="tool-desc">Calculate your real take-home pay after federal tax, Ontario provincial tax, CPP, and EI deductions. 2025 rates.</div>
+    </a>
+  </div>
+
+  <footer>// choi-alice · finance-explorers · 2025</footer>
+</div>
+</body>
+</html>
